@@ -15,14 +15,18 @@ int main(){
         std::cin>>input_mode;
     }
     while (input_mode != "file" && input_mode != "terminal");
+    std::unordered_map<std::string, long> text_freq;
+    std::string word;
     if(input_mode == "file"){
-        std::unordered_map<std::string, long> text;
-        std::string word;
+        freopen("file.in", "r", stdin);
         while(scanf("%s", &word) != EOF){
             scanf("%s", &word);
-            text[word]++;
+            text_freq[word]++;
         }
     }
-    std::vector<std::pair<std::string, long>> sorted(text.begin(), text.end());
+    std::vector<std::pair<std::string, long>> sorted(text_freq.begin(), text_freq.end());
     std::sort(sorted.begin(), sorted.end(), comp);
+    for(const auto& element:sorted){
+        std::cout<<"Word: "<<element.first<<" Amount of times found: "<<element.second<<std::endl;
+    }
 }
