@@ -1,5 +1,5 @@
 ## Frequency Analyzer 📊
-This is a project developed by [Sergio Sakellaropoulos] for analyzing the frequency of words in a text. The project uses C++ to read input either from a file or through the terminal and then calculates and displays the frequency of each word in the text.
+This is a project developed by Sergio Sakellaropoulos for analyzing the frequency of words in a text. The project uses C++ to read input either from a file or through the terminal and then calculates and displays the frequency of each word in the text.
 
 ## 🚀 Project Overview
 The Frequency Analyzer project is designed to analyze the frequency of words in a given text. It provides the following features:
@@ -11,7 +11,7 @@ Sorting the words based on frequency and lexicographic order.
 ## 💡 Usage
 
 Clone the repository:
-git clone https://github.com/[sergio-sak]/FrequencyAnalyzer.git
+git clone https://github.com/sergio-sak/FrequencyAnalyzer.git
 
 Compile the program:
 g++ -o freqanalyze freqanalyze.cpp
