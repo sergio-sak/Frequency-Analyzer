@@ -33,26 +33,34 @@ int main(){
             freq[word]++;        
         }
     }
-    else {
+    else{
         std::cout<<"Enter Text:\n";
         std::cin.ignore();
         getline(std::cin, word);
         std::vector<std::string> words;
         for(int i = 0; i < word.size(); ++i){
-            if(word[i] == ' ' || std::ispunct(word[i])){
+            if(word[i] != ' '){
+                if(isupper(word[i]))
+                    word[i] = std::tolower(word[i]);
+                cur.push_back(word[i]);
+            }
+            else{
+                if(std::ispunct(cur.back())){
+                cur.pop_back();      
+                }
                 words.push_back(cur);
                 cur.clear();
             }
-            else{
-                cur.push_back(word[i]);
-            }
         }
+
         for(int i = 0; i < words.size(); ++i){
             freq[words[i]]++;        
         }
     }
     std::vector<std::pair<std::string, long>> sorted(freq.begin(), freq.end());
     std::sort(sorted.begin(), sorted.end(), comp);
+    // std::ofstream outfile;
+    // outfile.open("file.out", std::ios::out);
     for(const auto& element:sorted){
         std::cout<<"Word: \""<<element.first<<"\". Amount of times found: "<<element.second<<std::endl;
     }
